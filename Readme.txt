@@ -1,4 +1,15 @@
-These are the codes used for generating the results in the paper.
+This repository gives data and codes used for generating results for the Journal paper:
+*******************************************************************
+Improving gene regulatory network inference using network topology information; A. Nair, M. Chetty, and P. P. Wangikar, Mol. BioSyst., 2015, DOI: 10.1039/C5MB00122F.
+*******************************************************************
+
+If you find these useful in your work, please cite the above paper.
+
+Some of the codes are from the toolbox called GlobalMIT. These code files have that information explicitly mentioned. Some of the codes are modified from GlobalMIT and these are also mentioned at the beginning of the files. Others have been developed me. I am making this available as a requirement for the above journal review process; and also because the results in the paper show a good improvement in the dynamic Bayesian network inference computational time. Thus, these codes will be a good supplement for the details of the algorithm given in the paper.
+
+(c) 2014-2015 Ajay Nair
+
+The details of the files present in this repository is given below:
 
 Algorithms:
 1. Normal: globalMIT_ab.m
