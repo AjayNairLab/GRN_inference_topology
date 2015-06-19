@@ -1,7 +1,5 @@
 This repository gives data and codes used for generating results for the Journal paper:
-*******************************************************************
-Improving gene regulatory network inference using network topology information; A. Nair, M. Chetty, and P. P. Wangikar, Mol. BioSyst., 2015, DOI: 10.1039/C5MB00122F.
-*******************************************************************
+
 
 If you find these useful in your work, please cite the above paper.
 

@@ -1,5 +1,5 @@
 %GlobalMIT: a toolbox for learning optimal dynamic Bayesian network structure with
-%the Mutual Information Test (MIT) scoring metric
+%the Mutual Information Test (MIT) scoring metric 
 %(C) 2010-2011 Nguyen Xuan Vinh   
 %Email: vinh.nguyen@monash.edu, vinh.nguyenx@gmail.com
 %Reference: 
