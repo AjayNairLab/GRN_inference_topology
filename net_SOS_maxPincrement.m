@@ -11,14 +11,12 @@
 
 %Usage:
 % net_SOS_maxPincrement()
-
-
 function []=net_SOS_maxPincrement()
 %*********************CONSTANTS REQUIRED
 n_state=3;%no of discrete states for the microarray data
 alpha=0.999;%significance level for the mutual information test for independance.
 allowSelfLoop=0;%allow self regulated link (=1) or not (=0)
-maxParent=2; %maximum number of parents a node can have
+maxParent=1; %maximum number of parents a node can have
 maxParentLimit=4;
 %**************************************
 %clc
@@ -65,14 +63,15 @@ tic();
 t(1)=toc();
 
 %==================================Finding the nodes that hit maxP
+
 numParents=sum(best_net1);
 maxPNodes=find(numParents>=maxParent);
+%==================================Second and subsequent iterations: 
 if(~isempty(maxPNodes))  % if some nodes have hit the max limit
 %     fprintf('Nodes hitting maxP limit are: \n');
 %     nodeNames(maxPNodes)
   
   while (maxParentTemp<=maxParentLimit)
-    %==================================Second and subsequent iterations: 
     %Learning maxPnodes by incrementing maxP
     count=count+1;
     maxParentTemp=maxParentTemp+1;
@@ -91,7 +90,6 @@ if(~isempty(maxPNodes))  % if some nodes have hit the max limit
     %================================== Combining the networks
     best_net1(:,maxPNodes)=best_net2(:,maxPNodes); %updating the parents for this iteration
   end
-%end %if(~isempty(maxPNodes))
 end
 
 best_net=best_net1;
@@ -108,9 +106,7 @@ M=fnPerformanceMeasure(best_net, actualNet)
 fprintf('Time taken in seconds: \n1st iteration: %f\nTotal: %f\n',t(1),t(2));
 
 %creating the network figure using 'createDotGraphic' function
-%createDotGraphic(actualNet,nodeNames,'Original SOS network');%in Ubuntu
-%createDotGraphic(best_net,nodeNames,'Learned SOS network');%in Ubuntu
-
-
+%createDotGraphic(actualNet,nodeNames,'Original SOS network');
+%createDotGraphic(best_net,nodeNames,'Learned SOS network');
 end
 

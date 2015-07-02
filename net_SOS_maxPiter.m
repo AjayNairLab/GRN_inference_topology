@@ -66,11 +66,11 @@ t(1)=toc();
 %==================================Finding the nodes that hit maxP
 numParents=sum(best_net1);
 maxPNodes=find(numParents>=maxParent);
+%==================================Second iteration: Learning maxPnodes without maxP
 if(~isempty(maxPNodes))  % if some nodes have hit the max limit
     %fprintf('Nodes hitting maxP limit are: \n');
-    %nodeNames(maxPNodes)
-
-    %==================================Second iteration: Learning maxPnodes without maxP
+    %nodeNames(maxPNodes)    
+    %==================================Learning maxPnodes without maxP
     [best_net2]=globalMIT_ab_maxP_iter2(b,c,alpha,allowSelfLoop,maxPNodes);
     t(2)=toc();
     
@@ -96,9 +96,7 @@ M=fnPerformanceMeasure(best_net, actualNet)
 fprintf('Time taken in seconds: \n1st iteration: %f\nTotal: %f\n',t(1),t(2));
 
 %creating the network figure using 'createDotGraphic' function
-%createDotGraphic(actualNet,nodeNames,'Original SOS network');%in Ubuntu
-%createDotGraphic(best_net,nodeNames,'Learned SOS network');%in Ubuntu
-
-
+%createDotGraphic(actualNet,nodeNames,'Original SOS network');
+%createDotGraphic(best_net,nodeNames,'Learned SOS network');
 end
 

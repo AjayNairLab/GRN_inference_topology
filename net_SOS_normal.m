@@ -41,7 +41,7 @@ load data_samples_SOS.mat; %reading the exp data from Ronen-Science2003
 
 %clc
 
-%*******************************without removing zero vectors
+%*******************************obtaining the experimental data
 t1=squeeze(sosPromoterAct(1,:,:));
 t2=squeeze(sosPromoterAct(2,:,:));
 t3=squeeze(sosPromoterAct(3,:,:));
@@ -51,11 +51,12 @@ t1d= myIntervalDiscretize(t1',n_state);%discreatizing
 t2d= myIntervalDiscretize(t2',n_state);%discreatizing
 t3d= myIntervalDiscretize(t3',n_state);%discreatizing
 t4d= myIntervalDiscretize(t4',n_state);%discreatizing
-%*******************************OVER without removing zero vectors
+%*******************************
 
-[b,c]=multi_time_series_cat(t1d,t2d,t3d,t4d);
+[b,c]=multi_time_series_cat(t1d,t2d,t3d,t4d);%combining data
 %size(b);
 
+%**************************************Performing inference
 tic();
 [best_net]=globalMIT_ab(b,c,alpha,allowSelfLoop);
 t=toc();
@@ -76,7 +77,6 @@ fprintf('Time taken in seconds: %f\n',t);
 
 
 %creating the network figure using 'createDotGraphic' function
-%createDotGraphic(actualNet,nodeNames,'Original SOS network');%in Ubuntu
-%createDotGraphic(best_net,nodeNames,'Learned SOS network');%in Ubuntu
-
-
+%createDotGraphic(actualNet,nodeNames,'Original SOS network');
+%createDotGraphic(best_net,nodeNames,'Learned SOS network');
+end
