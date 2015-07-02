@@ -6,11 +6,11 @@ A. Nair, M. Chetty, and P. P. Wangikar; Mol. BioSyst., 2015, DOI: 10.1039/C5MB00
 
 If you find these useful in your work, please cite the above paper.
 
-Some of the codes are from the toolbox called GlobalMIT. These code files have that information explicitly mentioned. Some of the codes are modified from GlobalMIT and these are also mentioned at the beginning of the files. Others have been developed by me. I am making this available as a requirement for the above journal review process; and also because the results in the paper show a good improvement in the dynamic Bayesian network inference computational time. Thus, these codes will be a good supplement to the details of the algorithm given in the paper. Further the results can be easily verified and reproduced.
+Some of the codes are from the toolbox called GlobalMIT (http://code.google.com/p/globalmit/). These code files have that information explicitly mentioned. Some of the codes are modified from GlobalMIT and these are also mentioned at the beginning of the files. Others have been developed by me. I am making this available as a requirement for the above journal review process; and also because the results in the paper show a good improvement in the dynamic Bayesian network inference computational time. Thus, these codes will be a good supplement to the details of the algorithm given in the paper. Further, the results can be easily verified and reproduced.
 
 (c) 2014-2015 Ajay Nair
 
-The details of the files present in this repository is given below:
+The details of the files present in this repository are given below:
 
 Algorithms:
 -----------
@@ -39,14 +39,6 @@ net_SOS_maxP.m: network inference of SOS network with maxP algorithm
 net_SOS_maxPiter.m: network inference of SOS network with maxPiter algorithm
 net_SOS_maxPincrement.m: network inference of SOS network with maxPincrement algorithm
 
-
-; %normal network inference with globalMIT
-; %network inference with maxP algorithm
-; %network inference with maxPiter algorithm
-; %network inference with maxPincrement algorithm
-
-	; %gene expression data file
-	; %network inference with maxPincrement algorithm
 
 Data files for the other networks.
 ----------------------------------
